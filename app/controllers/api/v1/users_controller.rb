@@ -1,22 +1,26 @@
 # frozen_string_literal: true
 
-class Api::V1::UsersController < ApplicationController
-  def create; end
+module Api
+  module V1
+    class UsersController < ApplicationController
+      def create; end
 
-  def index
-    users = [
-      { id: 1, first_name: 'taishi', last_name: 'shinoda' },
-      { id: 2, first_name: 'taishi', last_name: 'shinoda' },
-      { id: 3, first_name: 'taishi', last_name: 'shinoda' }
+      def index
+        users = [
+          { id: 1, first_name: 'taishi', last_name: 'shinoda' },
+          { id: 2, first_name: 'taishi', last_name: 'shinoda' },
+          { id: 3, first_name: 'taishi', last_name: 'shinoda' }
 
-    ]
-    render json: users
+        ]
+        render json: users
+      end
+
+      def show
+        user = { id: 1, first_name: 'taishi', last_name: 'shinoda' }
+        render json: user
+      end
+
+      def update; end
+    end
   end
-
-  def show
-    user = { id: 1, first_name: 'taishi', last_name: 'shinoda' }
-    render json: user
-  end
-
-  def update; end
 end
